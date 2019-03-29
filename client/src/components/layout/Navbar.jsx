@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { clrCurrentProfile } from "../../actions/profileActions";
-import { withRouter } from "react-router-dom";
 
 class Navbar extends Component {
   handleLogout = e => {
