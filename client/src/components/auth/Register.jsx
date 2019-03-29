@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
+
 import { connect } from "react-redux";
 import { registerUser } from "./../../actions/authActions";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 class Register extends Component {
   state = {
@@ -13,6 +14,11 @@ class Register extends Component {
     errors: {}
   };
 
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
@@ -32,7 +38,7 @@ class Register extends Component {
       password: this.state.password,
       password2: this.state.password2
     };
-    this.props.registerUser(newUser);
+    this.props.registerUser(newUser, this.props.history);
   };
 
   render() {
@@ -153,4 +159,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { registerUser }
-)(Register);
+)(withRouter(Register));
