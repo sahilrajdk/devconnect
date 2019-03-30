@@ -12,6 +12,8 @@ import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
+import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile";
 
 import "./App.css";
 
@@ -21,6 +23,8 @@ import { clrCurrentProfile } from "./actions/profileActions";
 import PrivateRoute from "./components/common/PrivateRoute";
 import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
+import AddExperience from "./components/add-profile-creds/AddExperience";
+import AddEducation from "./components/add-profile-creds/AddEducation";
 
 //check for token
 if (localStorage.jwtToken) {
@@ -66,6 +70,18 @@ class App extends Component {
                 path="/edit-profile"
                 component={EditProfile}
               />
+              <PrivateRoute
+                exact
+                path="/add-experience"
+                component={AddExperience}
+              />
+              <PrivateRoute
+                exact
+                path="/add-education"
+                component={AddEducation}
+              />
+              <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/profile/:handle" component={Profile} />
             </div>
             <Footer />
           </div>
