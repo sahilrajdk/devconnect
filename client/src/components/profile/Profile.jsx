@@ -17,6 +17,8 @@ class Profile extends Component {
   }
   render() {
     const { profile, loading } = this.props.profile;
+    let profileContent;
+
     if (profile === null || loading) {
       profileContent = <Spinner />;
     } else {
@@ -28,16 +30,27 @@ class Profile extends Component {
                 Back to Profiles
               </Link>
             </div>
+            <div className="col-md-6" />
           </div>
+          <ProfileHeader profile={profile} />
+          <ProfileAbout profile={profile} />
+          <ProfileCreds
+            education={profile.education}
+            experience={profile.experience}
+          />
+          {profile.githubusername ? (
+            <ProfileGithub githubusername={profile.githubusername} />
+          ) : null}
         </div>
       );
     }
     return (
-      <div>
-        <ProfileHeader />
-        <ProfileAbout />
-        <ProfileCreds />
-        <ProfileGithub />
+      <div className="profile">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">{profileContent}</div>
+          </div>
+        </div>
       </div>
     );
   }

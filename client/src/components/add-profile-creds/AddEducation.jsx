@@ -16,6 +16,7 @@ class AddEducation extends Component {
       fieldofstudy: "",
       from: "",
       to: "",
+      description: "",
       current: false,
       disabled: false,
       errors: {}
@@ -48,7 +49,8 @@ class AddEducation extends Component {
       from: this.state.from,
       to: this.state.to,
       current: this.state.current,
-      disabled: this.state.disabled
+      disabled: this.state.disabled,
+      description: this.state.description
     };
 
     this.props.addEducation(eduData, this.props.history);
@@ -82,14 +84,13 @@ class AddEducation extends Component {
                   value={this.state.degree}
                   onChange={this.handleChange}
                 />
-                <TextAreaFieldGroup
-                  placeholder="Field of Study"
+                <TextFieldGroup
+                  placeholder="* Field of Study"
                   name="fieldofstudy"
                   error={errors.fieldofstudy}
                   value={this.state.fieldofstudy}
                   onChange={this.handleChange}
                 />
-
                 <h6>From Date</h6>
                 <TextFieldGroup
                   type="date"
@@ -106,6 +107,13 @@ class AddEducation extends Component {
                   value={this.state.to}
                   onChange={this.handleChange}
                   disabled={this.state.disabled ? "disabled" : ""}
+                />
+                <TextAreaFieldGroup
+                  placeholder="Short Description about your Degree/Education"
+                  name="description"
+                  error={errors.description}
+                  value={this.state.description}
+                  onChange={this.handleChange}
                 />
                 <div className="form-check mb-4">
                   <input
