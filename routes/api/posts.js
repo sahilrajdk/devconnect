@@ -180,7 +180,7 @@ router.post(
 // Access Pivate
 
 router.delete(
-  "/uncomment/:postId/:commentId",
+  "/comment/:postId/:commentId",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Post.findById(req.params.postId)

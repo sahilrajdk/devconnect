@@ -14,6 +14,8 @@ import Register from "./components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
+import Posts from "./components/posts/Posts";
+import Post from "./components/posts/Post";
 
 import "./App.css";
 
@@ -25,6 +27,7 @@ import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
 import AddExperience from "./components/add-profile-creds/AddExperience";
 import AddEducation from "./components/add-profile-creds/AddEducation";
+import NotFound from "./components/not-found/NotFound";
 
 //check for token
 if (localStorage.jwtToken) {
@@ -80,8 +83,11 @@ class App extends Component {
                 path="/add-education"
                 component={AddEducation}
               />
+              <PrivateRoute exact path="/feed" component={Posts} />
+              <PrivateRoute exact path="/post/:id" component={Post} />
               <Route exact path="/profiles" component={Profiles} />
               <Route exact path="/profile/:handle" component={Profile} />
+              <Route exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </div>
