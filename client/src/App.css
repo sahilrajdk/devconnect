@@ -37,3 +37,16 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+nav {
+  background-color: white;
+}
+
+nav li a {
+  color: orangered;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

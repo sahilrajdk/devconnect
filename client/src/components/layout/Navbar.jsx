@@ -9,7 +9,7 @@ class Navbar extends Component {
   handleLogout = e => {
     e.preventDefault();
 
-    this.props.clrCurrentProfile();
+    //this.props.clrCurrentProfile();
     this.props.logoutUser();
   };
 
@@ -29,7 +29,7 @@ class Navbar extends Component {
           </Link>
         </li>
         <li className="nav-item">
-          <Link href="#" onClick={this.handleLogout} className="nav-link">
+          <Link onClick={this.handleLogout} className="nav-link">
             <img
               className="rounded-circle"
               src={user.avatar}
@@ -58,10 +58,10 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+      <nav className="navbar navbar-expand-sm mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            DevConnector
+            LinkUp!
           </Link>
           <button
             className="navbar-toggler"
