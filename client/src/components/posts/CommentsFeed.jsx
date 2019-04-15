@@ -6,9 +6,13 @@ class CommentsFeed extends Component {
   render() {
     const { comments, postId } = this.props;
 
-    return comments.map(comment => (
-      <CommentItem key={comment._id} comment={comment} postId={postId} />
-    ));
+    return (
+      <div className="comments_feedpage">
+        {comments.map(comment => (
+          <CommentItem key={comment._id} comment={comment} postId={postId} />
+        ))}
+      </div>
+    );
   }
 }
 

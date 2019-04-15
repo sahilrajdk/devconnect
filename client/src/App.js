@@ -17,7 +17,7 @@ import Profile from "./components/profile/Profile";
 import Posts from "./components/posts/Posts";
 import Post from "./components/posts/Post";
 
-import "./App.css";
+import "./App.scss";
 
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { clrCurrentProfile } from "./actions/profileActions";
@@ -56,9 +56,12 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <div className="container">
+            <div className="header">
+              <Navbar />
+            </div>
+            <div className="maincontent">
+              <Route exact path="/" component={Landing} />
+
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
 
@@ -89,7 +92,9 @@ class App extends Component {
               <Route exact path="/profile/:handle" component={Profile} />
               <Route exact path="/not-found" component={NotFound} />
             </div>
-            <Footer />
+            <div className="footer">
+              <Footer />
+            </div>
           </div>
         </BrowserRouter>
       </Provider>

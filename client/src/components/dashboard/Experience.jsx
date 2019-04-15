@@ -25,7 +25,7 @@ class Experience extends Component {
         <td>
           <button
             onClick={() => this.handleDelete(exp._id)}
-            className="btn btn-danger"
+            className="custom-btn btn-small btn-delete"
           >
             Delete
           </button>
@@ -34,15 +34,14 @@ class Experience extends Component {
     ));
 
     return (
-      <div className="">
-        <h4 className="mb-4">Experience Credentials</h4>
+      <div className="dashboard__experience">
+        <h4>Industry Experience</h4>
         <table className="table">
           <thead>
             <tr>
               <th>Company</th>
               <th>Title</th>
               <th>Years</th>
-              <th />
             </tr>
           </thead>
           <tbody>{experienceData}</tbody>

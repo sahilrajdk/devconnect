@@ -28,62 +28,66 @@ class PostItem extends Component {
   render() {
     const { post, auth, showActions } = this.props;
     return (
-      <div className="card card-body mb-3">
-        <div className="row">
-          <div className="col-md-2">
-            <Link to="">
-              <img
-                className="rounded-circle d-none d-md-block"
-                src={post.avatar}
-                alt=""
-              />
-            </Link>
-            <br />
-            <p className="text-center">{post.name}</p>
-          </div>
-          <div className="col-md-10">
-            <p className="lead">{post.text}</p>
+      <div className="card__post">
+        <div className="card__post-avatar">
+          <Link to="">
+            <img src={post.avatar} alt="" />
+          </Link>
+        </div>
+
+        <div className="post-right">
+          <p className="text-center">{post.name}</p>
+          <p className="lead">{post.text}</p>
+          <div className="post-actions">
             {showActions ? (
-              <span>
-                <button
-                  onClick={this.onLikeClick.bind(this, post._id)}
-                  type="button"
-                  className="btn btn-light mr-1"
-                >
-                  <i
-                    className={
-                      this.isUserLiked(post.likes)
-                        ? "text-info fas fa-thumbs-up"
-                        : "fas fa-thumbs-up"
-                    }
-                  />
-                  <span className="badge badge-light">{post.likes.length}</span>
-                </button>
-                <button
-                  onClick={this.onDislikeClick.bind(this, post._id)}
-                  type="button"
-                  className="btn btn-light mr-1"
-                >
-                  <i
-                    className={
-                      this.isUserLiked(post.likes)
-                        ? "text-secondary fas fa-thumbs-down"
-                        : "fas fa-thumbs-down"
-                    }
-                  />
-                </button>
+              <React.Fragment>
+                <div className="likebuttons">
+                  {" "}
+                  <button
+                    onClick={this.onLikeClick.bind(this, post._id)}
+                    type="button"
+                    className="custom-btn"
+                  >
+                    <i
+                      className={
+                        this.isUserLiked(post.likes)
+                          ? "text-info fas fa-thumbs-up"
+                          : "fas fa-thumbs-up"
+                      }
+                    />
+                    <span className="badge badge-light">
+                      {post.likes.length}
+                    </span>
+                  </button>
+                  <button
+                    onClick={this.onDislikeClick.bind(this, post._id)}
+                    type="button"
+                    className="custom-btn"
+                  >
+                    <i
+                      className={
+                        this.isUserLiked(post.likes)
+                          ? "text-secondary fas fa-thumbs-down"
+                          : "fas fa-thumbs-down"
+                      }
+                    />
+                  </button>
+                </div>
+
                 <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
                   Comments
                 </Link>
-                {post.user === auth.user.id ? (
-                  <button
-                    onClick={this.onDeleteClick.bind(this, post._id)}
-                    className="btn btn-danger mr-1"
-                  >
-                    <i className="fas fa-times" />
-                  </button>
-                ) : null}
-              </span>
+                <div className="post_delete">
+                  {post.user === auth.user.id ? (
+                    <button
+                      onClick={this.onDeleteClick.bind(this, post._id)}
+                      className="custom-btn btn-small"
+                    >
+                      <i className="fas fa-times" />
+                    </button>
+                  ) : null}
+                </div>
+              </React.Fragment>
             ) : null}
           </div>
         </div>

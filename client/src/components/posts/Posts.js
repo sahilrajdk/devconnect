@@ -7,9 +7,18 @@ import { getPosts } from "../../actions/postActions";
 import PostsFeed from "./PostsFeed";
 
 class Posts extends Component {
+  state = {
+    displayform: true
+  };
   componentDidMount() {
     this.props.getPosts();
   }
+
+  handleAddPostButton = () => {
+    this.setState({
+      displayform: !this.state.displayform
+    });
+  };
 
   render() {
     const { posts, loading } = this.props.post;
@@ -21,15 +30,18 @@ class Posts extends Component {
       postContent = <PostsFeed posts={posts} />;
     }
     return (
-      <div className="feed">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <PostForm />
-              {postContent}
-            </div>
-          </div>
-        </div>
+      <div className="posts_feed">
+        <button
+          onClick={this.handleAddPostButton}
+          className="custom-btn btn-wshadow"
+        >
+          Add Post
+        </button>
+        {this.state.displayform ? (
+          <PostForm handlebutton={this.handleAddPostButton} />
+        ) : null}
+
+        {postContent}
       </div>
     );
   }

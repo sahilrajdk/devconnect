@@ -11,32 +11,29 @@ class ProfileAbout extends Component {
     //convert array to csv  for skills
 
     const skills = profile.skills.map((skill, index) => (
-      <div key={index} className="p-3">
-        <i className="fa fa-check" />
-        {skill}
-      </div>
+      <ul>
+        <li key={index}>
+          <i className="fa fa-check" />
+          {skill}
+        </li>
+      </ul>
     ));
 
     return (
-      <div className="row">
-        <div className="col-md-12">
-          <div className="card card-body bg-light mb-3">
-            <h3 className="text-center text-info">{firstName}'s Bio</h3>
-            <p className="lead">
-              {isEmpty(profile.bio) ? (
-                <span>{firstName} does not have a bio yet</span>
-              ) : (
-                <span>{profile.bio}</span>
-              )}
-            </p>
-            <hr />
-            <h3 className="text-center text-info">Skill Set</h3>
-            <div className="row">
-              <div className="d-flex flex-wrap justify-content-center align-items-center">
-                {skills}
-              </div>
-            </div>
-          </div>
+      <div className="view__profile-bio">
+        <div className="bio-left">
+          <h3 className="text-center text-info">{firstName}'s Bio</h3>
+          <p className="lead">
+            {isEmpty(profile.bio) ? (
+              <span>{firstName} does not have a bio yet</span>
+            ) : (
+              <span>{profile.bio}</span>
+            )}
+          </p>
+        </div>
+        <div className="bio-right">
+          <h3 className="text-center text-info">Skill Set</h3>
+          <div className="view__profile-skills">{skills}</div>
         </div>
       </div>
     );

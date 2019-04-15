@@ -31,16 +31,12 @@ class Post extends Component {
 
     return (
       <div className="post">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <Link to="/feed" className="btn btn-light mb-3">
-                GO Back
-              </Link>
-              {postContent}
-            </div>
-          </div>
+        <div className="post-header">
+          <Link to="/feed" className="btn-small custom-btn">
+            GO Back
+          </Link>
         </div>
+        <div className="post-content">{postContent}</div>
       </div>
     );
   }

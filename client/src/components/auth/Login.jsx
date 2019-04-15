@@ -47,35 +47,33 @@ class Login extends Component {
 
     return (
       <div className="login">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Log In</h1>
-              <p className="lead text-center">
-                Sign in to your DevConnector account
-              </p>
-              <form noValidate onSubmit={this.handleSubmit}>
-                <TextFieldGroup
-                  placeholder="Email Address"
-                  type="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                  error={errors.email}
-                />
-                <TextFieldGroup
-                  placeholder="password"
-                  type="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.handleChange}
-                  error={errors.Password}
-                />
+        <div className="login__content">
+          <h1 className="display-4 text-center">Log In</h1>
+          <p className="lead text-center">
+            Sign in to your DevConnector account
+          </p>
+          <form noValidate onSubmit={this.handleSubmit}>
+            <TextFieldGroup
+              placeholder="Email Address"
+              type="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              error={errors.email}
+            />
+            <TextFieldGroup
+              placeholder="password"
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              error={errors.Password}
+            />
 
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
-            </div>
-          </div>
+            <button type="submit" className="custom-btn btn-large">
+              submit
+            </button>
+          </form>
         </div>
       </div>
     );

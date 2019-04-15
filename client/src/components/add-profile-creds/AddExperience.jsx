@@ -60,88 +60,82 @@ class AddExperience extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="add-experience">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <Link to="/dashboard" className="btn btn-light">
-                Go Back
-              </Link>
-              <h1 className="display-4 text-center">Add Experience</h1>
-              <p className="lead text-center">
-                Add any developer/programming positions that you have had in the
-                past
-              </p>
-              <small className="d-block pb-3">* = required field</small>
-              <form noValidate onSubmit={this.handleSubmit}>
-                <TextFieldGroup
-                  placeholder="* Company"
-                  name="company"
-                  error={errors.company}
-                  value={this.state.company}
-                  onChange={this.handleChange}
-                />
-                <TextFieldGroup
-                  placeholder="* Job Title"
-                  name="title"
-                  error={errors.title}
-                  value={this.state.title}
-                  onChange={this.handleChange}
-                />
-                <TextAreaFieldGroup
-                  placeholder="Short Description about your role/work"
-                  name="description"
-                  error={errors.description}
-                  value={this.state.description}
-                  onChange={this.handleChange}
-                />
-                <TextFieldGroup
-                  placeholder="* Location"
-                  name="location"
-                  error={errors.location}
-                  value={this.state.location}
-                  onChange={this.handleChange}
-                />
-                <h6>From Date</h6>
-                <TextFieldGroup
-                  type="date"
-                  name="from"
-                  error={errors.from}
-                  value={this.state.from}
-                  onChange={this.handleChange}
-                />
-                <h6>To Date</h6>
-                <TextFieldGroup
-                  type="date"
-                  name="to"
-                  error={errors.to}
-                  value={this.state.to}
-                  onChange={this.handleChange}
-                  disabled={this.state.disabled ? "disabled" : ""}
-                />
-                <div className="form-check mb-4">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    name="current"
-                    value={this.state.current}
-                    checked={this.state.current}
-                    onChange={this.onCheck}
-                    id="current"
-                  />
-                  <label htmlFor="current" className="form-check label">
-                    Current Job
-                  </label>
-                </div>
-                <input
-                  type="submit"
-                  value="submit"
-                  className="btn btn-info btn-block mt-4"
-                />
-              </form>
-            </div>
-          </div>
+      <div className="add__exp">
+        <div className="add__exp-header">
+          <Link to="/dashboard" className="custom-btn btn-small">
+            Go Back
+          </Link>
+          <h3>Add Experience</h3>
+          <p>
+            Add any developer/programming positions that you have had in the
+            past
+          </p>
+          <small>* = required field</small>
         </div>
+        <form noValidate onSubmit={this.handleSubmit}>
+          <TextFieldGroup
+            placeholder="* Company"
+            name="company"
+            error={errors.company}
+            value={this.state.company}
+            onChange={this.handleChange}
+          />
+          <TextFieldGroup
+            placeholder="* Job Title"
+            name="title"
+            error={errors.title}
+            value={this.state.title}
+            onChange={this.handleChange}
+          />
+          <TextAreaFieldGroup
+            placeholder="Short Description about your role/work"
+            name="description"
+            error={errors.description}
+            value={this.state.description}
+            onChange={this.handleChange}
+          />
+          <TextFieldGroup
+            placeholder="* Location"
+            name="location"
+            error={errors.location}
+            value={this.state.location}
+            onChange={this.handleChange}
+          />
+          <h6>From Date</h6>
+          <TextFieldGroup
+            type="date"
+            name="from"
+            error={errors.from}
+            value={this.state.from}
+            onChange={this.handleChange}
+          />
+          <h6>To Date</h6>
+          <TextFieldGroup
+            type="date"
+            name="to"
+            error={errors.to}
+            value={this.state.to}
+            onChange={this.handleChange}
+            disabled={this.state.disabled ? "disabled" : ""}
+          />
+          <div className="form-check ">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              name="current"
+              value={this.state.current}
+              checked={this.state.current}
+              onChange={this.onCheck}
+              id="current"
+            />
+            <label htmlFor="current">Current Job</label>
+          </div>
+          <input
+            type="submit"
+            value="submit"
+            className="custom-btn btn-small"
+          />
+        </form>
       </div>
     );
   }

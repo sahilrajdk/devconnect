@@ -29,14 +29,11 @@ class Profile extends Component {
       profileContent = <Spinner />;
     } else {
       profileContent = (
-        <div>
-          <div className="row">
-            <div className="col-md-6">
-              <Link to="/profiles" className="btn btn-light mb-3 float-left">
-                Back to Profiles
-              </Link>
-            </div>
-            <div className="col-md-6" />
+        <React.Fragment>
+          <div>
+            <Link to="/profiles" className="button__backtoprofiles">
+              Back to Profiles
+            </Link>
           </div>
           <ProfileHeader profile={profile} />
           <ProfileAbout profile={profile} />
@@ -44,19 +41,17 @@ class Profile extends Component {
             education={profile.education}
             experience={profile.experience}
           />
-          {profile.githubusername ? (
-            <ProfileGithub githubusername={profile.githubusername} />
-          ) : null}
-        </div>
+          <div className="section__github">
+            {profile.githubusername ? (
+              <ProfileGithub githubusername={profile.githubusername} />
+            ) : null}
+          </div>
+        </React.Fragment>
       );
     }
     return (
       <div className="profile">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">{profileContent}</div>
-          </div>
-        </div>
+        <div className="profile__content">{profileContent}</div>
       </div>
     );
   }

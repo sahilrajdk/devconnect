@@ -1,0 +1,100 @@
+.posts_feed {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  > button {
+    margin-bottom: 0.5rem;
+    width: 20%;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  background-color: rgb(175, 175, 175);
+  border-radius: 2px;
+  padding: 0.3rem;
+  align-items: center;
+}
+.post-form-content,
+.comment-form-content {
+  width: 50%;
+  text-align: center;
+}
+.card__post {
+  img {
+    width: 3rem;
+    margin-right: 1rem;
+  }
+}
+.card__post,
+.card__comment {
+  &-avatar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  margin: 0 0.5rem;
+  border: 0.5px solid salmon;
+  margin-bottom: 0.4rem;
+  border-radius: 2px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  .post-right {
+    justify-content: space-between;
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.post-actions {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    color: rgb(255, 51, 0);
+    text-decoration: none;
+  }
+}
+.likebuttons {
+  button {
+    margin-top: 0;
+    padding: 2px;
+    margin-right: 2px;
+    &:hover {
+      transform: none;
+      background-color: greenyellow;
+    }
+  }
+}
+
+.post_delete {
+  display: flex;
+  align-items: center;
+  button {
+    &:hover {
+      transform: none;
+      background-color: red;
+    }
+    height: 100%;
+    margin: 0 0.2rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 1rem;
+      padding-left: 0.2rem;
+      margin: 0;
+    }
+  }
+}

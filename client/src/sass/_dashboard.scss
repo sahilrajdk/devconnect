@@ -1,0 +1,65 @@
+.dashboard {
+  display: flex;
+  flex: 1;
+  background-color: #7c4d56;
+  .header {
+    display: flex;
+    align-items: center;
+    height: 8%;
+    padding: 1rem;
+    background-color: #364156;
+    color: #e2dadb;
+  }
+  .profileActions {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    i {
+      margin-right: 0.2rem;
+    }
+    a {
+      margin-right: 2rem;
+    }
+  }
+
+  .subcontent {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__education {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  &__experience {
+    display: flex;
+    flex-direction: column;
+    width: 38%;
+  }
+  a {
+    text-decoration: none;
+    color: #d66953;
+  }
+
+  &__content {
+    width: 100%;
+  }
+}
+
+.table {
+  font-size: 0.8rem;
+  border: 0.5px solid black;
+  border-radius: 1px;
+
+  th {
+    text-transform: uppercase;
+    font-size: 0.5rem;
+  }
+  tr {
+    text-align: center;
+    font-size: 0.6rem;
+  }
+}

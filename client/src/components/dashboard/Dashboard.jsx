@@ -32,47 +32,46 @@ class Dashboard extends Component {
       //check for empty profile
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
-          <div>
-            <p className="lead text-muted">
-              Welcome
-              <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
-            </p>
-            <ProfileActions />
-            <Experience experienceData={profile.experience} />
-            <Education educationData={profile.education} />
-            <div style={{ marginBottom: "60px" }} />
-            <button
-              onClick={this.handleOnDeleteAccount}
-              className="btn btn-danger"
-            >
-              Delete My Account
-            </button>
-          </div>
+          <React.Fragment>
+            <div className="header">
+              <p>
+                Welcome
+                <Link to={`/profile/${profile.handle}`}> {user.name}</Link>
+              </p>
+              <ProfileActions />
+              <button
+                onClick={this.handleOnDeleteAccount}
+                className="custom-btn btn-small btn-delete"
+              >
+                Delete My Account
+              </button>
+            </div>
+            <div className="subcontent">
+              <Experience experienceData={profile.experience} />
+              <Education educationData={profile.education} />
+            </div>
+          </React.Fragment>
         );
       } else {
         //user has no profile yet
         dashboardContent = (
-          <div>
-            <p className="lead text-muted">Welcome {user.name},</p>
-            <p>Please Setup your profile</p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
-              Add Profile
-            </Link>
-          </div>
+          <React.Fragment>
+            <div className="header">
+              <div>
+                <p>
+                  Welcome {user.name},Please Setup your profile.{" "}
+                  <Link to="/create-profile">Add Profile</Link>{" "}
+                </p>
+              </div>
+            </div>
+          </React.Fragment>
         );
       }
     }
 
     return (
       <div className="dashboard">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
-              {dashboardContent}
-            </div>
-          </div>
-        </div>
+        <div className="dashboard__content">{dashboardContent}</div>
       </div>
     );
   }

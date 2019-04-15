@@ -36,17 +36,22 @@ class PostForm extends Component {
     };
 
     this.props.addPost(newPost);
-    this.setState({
-      text: ""
-    });
+    this.setState(
+      {
+        text: ""
+      },
+      () => {
+        this.props.handlebutton();
+      }
+    );
   };
 
   render() {
     const { errors } = this.state;
     return (
-      <div className="post-form mb-3">
-        <div className="card card-info">
-          <div className="card-header bg-info text-white">Create Post</div>
+      <div className="post-form">
+        <div className="post-form-content">
+          <div>Create Post</div>
           <div className="card-body">
             <form noValidate onSubmit={this.handleSubmit}>
               <div className="form-group">
@@ -58,9 +63,10 @@ class PostForm extends Component {
                   error={errors.text}
                 />
               </div>
-              <button type="submit" className="btn btn-dark">
+              <button type="submit" className="custom-btn btn-small">
                 Submit
               </button>
+              <button className="custom-btn btn-small">X</button>
             </form>
           </div>
         </div>

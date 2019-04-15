@@ -41,21 +41,25 @@ class ProfileGithub extends Component {
   render() {
     const { repos } = this.state;
     const repoItems = repos.map(repo => (
-      <div key={repo.id} className="card card-body mb-2">
-        <div className="row">
-          <div className="col-md-6">
+      <div key={repo.id} className="repo_card">
+        <div>
+          <div>
             <h4>
-              <Link to={repo.html_url} className="text-info" targer="_blank">
+              <Link
+                to={repo.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {repo.name}
               </Link>
             </h4>
             <p>{repo.description}</p>
           </div>
-          <div className="col-m-6">
-            <span className="badge badge-info mr-1">
+          <div className="badges">
+            <span className="badge badge-info ">
               Stars: {repo.stargazers_count}
             </span>
-            <span className="badge badge-secondary mr-1">
+            <span className="badge badge-secondary ">
               Watchers: {repo.watchers_count}
             </span>
             <span className="badge badge-success">
@@ -66,10 +70,9 @@ class ProfileGithub extends Component {
       </div>
     ));
     return (
-      <div>
-        <hr />
+      <div className="view__profile-github">
         <h3 className="mb-4">Latest GitHub Repos</h3>
-        {repoItems}
+        <div className="repo_cards">{repoItems}</div>
       </div>
     );
   }

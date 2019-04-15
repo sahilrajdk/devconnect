@@ -26,7 +26,7 @@ class Education extends Component {
         <td>
           <button
             onClick={() => this.handleDelete(edu._id)}
-            className="btn btn-danger"
+            className="custom-btn btn-small btn-delete"
           >
             Delete
           </button>
@@ -35,15 +35,15 @@ class Education extends Component {
     ));
 
     return (
-      <div className="">
-        <h4 className="mb-4">Education Details</h4>
+      <div className="dashboard__education">
+        <h4 className="mb-4">Education</h4>
         <table className="table">
           <thead>
             <tr>
               <th>School</th>
               <th>Degree</th>
               <th>Field of Study</th>
-              <th />
+              <th>Years</th>
             </tr>
           </thead>
           <tbody>{educationData}</tbody>

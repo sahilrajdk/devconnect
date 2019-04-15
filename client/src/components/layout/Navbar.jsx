@@ -17,7 +17,7 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav authlinks">
         <li className="nav-item">
           <Link to="/feed" className="nav-link">
             Posts Feed
@@ -30,20 +30,13 @@ class Navbar extends Component {
         </li>
         <li className="nav-item">
           <Link onClick={this.handleLogout} className="nav-link">
-            <img
-              className="rounded-circle"
-              src={user.avatar}
-              alt={user.name}
-              style={{ width: "20px", marginRight: "5px" }}
-              title="needs gravatar with your email"
-            />
             LogOut
           </Link>
         </li>
       </ul>
     );
     const guestLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav guestlinks">
         <li className="nav-item">
           <Link className="nav-link" to="/register">
             Sign Up
@@ -58,31 +51,22 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-sm mb-4">
-        <div className="container">
+      <nav className="navbar">
+        <div className="navbar-left">
           <Link className="navbar-brand" to="/">
             LinkUp!
           </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#mobile-nav"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
 
-          <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  {" "}
-                  Developers
-                </Link>
-              </li>
-            </ul>
-            {isAuthenticated ? authLinks : guestLinks}
-          </div>
+          <ul className="navbar-nav">
+            <li className="navbar-item">
+              <Link className="nav-link" to="/profiles">
+                Developers
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="navbar-right">
+          {isAuthenticated ? authLinks : guestLinks}
         </div>
       </nav>
     );
