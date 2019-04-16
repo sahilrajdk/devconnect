@@ -7,7 +7,7 @@ import { clrCurrentProfile } from "../../actions/profileActions";
 
 class Navbar extends Component {
   state = {
-    isOpen: true
+    isOpen: false
   };
   toggleMenu = () => {
     this.setState({ isOpen: !this.state.isOpen });
