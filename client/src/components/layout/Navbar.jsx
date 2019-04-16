@@ -95,9 +95,9 @@ class Navbar extends Component {
           </Link>
           {isAuthenticated ? authLinks : guestLinks}
 
-          <a href="#" class="sidebar-close" onClick={this.toggleMenu}>
+          <button className="sidebar-close-btn" onClick={this.toggleMenu}>
             &times;
-          </a>
+          </button>
         </div>
       </React.Fragment>
     );

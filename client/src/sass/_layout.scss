@@ -121,7 +121,11 @@
     font-size: 2rem;
   }
 }
-
+.sidebar-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+}
 .sidebar-hide {
   visibility: hidden;
   height: 0;
@@ -163,7 +167,7 @@
 .guestlinks {
   display: flex;
   flex: 1;
-  padding: 0 2rem;
+  padding-right: 0.2rem;
   a {
     @media only screen and (max-width: 600px) {
       margin-left: 0;
@@ -261,7 +265,10 @@
   font-size: 0.5rem;
   color: #c8d3d5;
 }
-
+.posts_feed:first-child {
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
 .register {
   display: flex;
   flex: 1;
@@ -285,6 +292,11 @@
       margin: 0.1rem 0;
     }
   }
+}
+
+textarea {
+  height: 5rem;
+  width: 100%;
 }
 
 .create__profile,
@@ -328,6 +340,7 @@
     }
     .form-check {
       display: flex;
+      flex-direction: column;
       width: 20%;
       text-align: center;
       margin: auto;
@@ -410,4 +423,8 @@
       }
     }
   }
+}
+
+.mt-2 {
+  margin-top: 2rem;
 }

@@ -10,17 +10,10 @@
     font-size: 0.6rem;
     padding: 0.1rem;
   }
-  .button__backtoprofiles {
-    background-color: #f36832;
-    padding: 0.2rem;
-    border-radius: 1px;
-    text-decoration: none;
-    color: #dadada;
-  }
+
   &__content {
     display: flex;
     overflow-y: scroll;
-
     flex-direction: column;
     scroll-behavior: smooth;
   }
@@ -41,7 +34,6 @@
   &-creds-exp {
     display: flex;
     flex-direction: column;
-    flex: 100%;
   }
   &-header,
   &-bio,
@@ -55,7 +47,7 @@
   }
 
   &-header {
-    justify-content: start;
+    justify-content: center;
     font-size: 0.7rem;
     align-items: center;
     a {
@@ -76,17 +68,26 @@
     margin-left: 2rem;
   }
   &-bio {
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
+    @media only screen and (max-width: 770px) {
+      flex-direction: column;
+      width: 80%;
+      margin: auto;
+      align-items: flex-start;
+      justify-content: center;
+    }
   }
-  &-skills ul {
-    display: inline-block;
+  &-skills li {
+    text-transform: uppercase;
+    display: inline;
     list-style: none;
     margin: 0.2rem;
   }
   &-creds {
     padding: 0.5rem 1.5rem;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   &-github {
     flex-direction: column;
@@ -119,8 +120,16 @@
       font-size: 0.8rem;
     }
     .repo_cards {
+      @media only screen and (max-width: 770px) {
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+      }
+
       @media only screen and (max-width: 600px) {
         flex-direction: column;
+        width: 50%;
+        margin: auto;
       }
       display: flex;
       flex-direction: row;
@@ -135,5 +144,14 @@
       font-size: 0.6rem;
       width: 100%;
     }
+  }
+}
+
+.badges {
+  @media only screen and (max-width: 770px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
   }
 }

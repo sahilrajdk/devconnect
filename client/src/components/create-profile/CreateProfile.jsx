@@ -175,7 +175,7 @@ class CreateProfile extends Component {
               onChange={this.handleChange}
             />
             <TextFieldGroup
-              placeholder="Add you skills"
+              placeholder="Add your skills,use commas between skills"
               name="skills"
               error={errors.skills}
               value={this.state.skills}
@@ -212,7 +212,7 @@ class CreateProfile extends Component {
             <input
               type="submit"
               value="Submit"
-              className="custom-btn btn-small"
+              className="custom-btn btn-small mt-2"
             />
           </form>
         </div>

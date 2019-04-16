@@ -8,7 +8,7 @@ import PostsFeed from "./PostsFeed";
 
 class Posts extends Component {
   state = {
-    displayform: true
+    displayform: false
   };
   componentDidMount() {
     this.props.getPosts();
@@ -33,7 +33,7 @@ class Posts extends Component {
       <div className="posts_feed">
         <button
           onClick={this.handleAddPostButton}
-          className="custom-btn btn-wshadow"
+          className="custom-btn btn-small"
         >
           Add Post
         </button>

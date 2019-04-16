@@ -22,11 +22,9 @@ class Education extends Component {
           ) : (
             <Moment format="YYYY/MM/DD">{edu.to}</Moment>
           )}
-        </td>
-        <td>
           <button
             onClick={() => this.handleDelete(edu._id)}
-            className="custom-btn btn-small btn-delete"
+            className="custom-btn btn-small btn-delete btn-table"
           >
             Delete
           </button>

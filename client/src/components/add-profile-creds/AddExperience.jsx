@@ -133,7 +133,7 @@ class AddExperience extends Component {
           <input
             type="submit"
             value="submit"
-            className="custom-btn btn-small"
+            className="custom-btn btn-small mt-2"
           />
         </form>
       </div>

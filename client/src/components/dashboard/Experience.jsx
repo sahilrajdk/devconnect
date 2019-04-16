@@ -21,11 +21,9 @@ class Experience extends Component {
           ) : (
             <Moment format="YYYY/MM/DD">{exp.to}</Moment>
           )}
-        </td>
-        <td>
           <button
             onClick={() => this.handleDelete(exp._id)}
-            className="custom-btn btn-small btn-delete"
+            className="custom-btn btn-small btn-delete btn-table"
           >
             Delete
           </button>
