@@ -6,6 +6,10 @@
   flex: 1;
   color: #212c3f;
   overflow: hidden;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.6rem;
+    padding: 0.1rem;
+  }
   .button__backtoprofiles {
     background-color: #f36832;
     padding: 0.2rem;
@@ -34,6 +38,11 @@
 }
 
 .view__profile {
+  &-creds-exp {
+    display: flex;
+    flex-direction: column;
+    flex: 100%;
+  }
   &-header,
   &-bio,
   &-creds,
@@ -75,9 +84,9 @@
     margin: 0.2rem;
   }
   &-creds {
+    padding: 0.5rem 1.5rem;
     flex-direction: row;
-
-    justify-content: space-around;
+    justify-content: space-between;
   }
   &-github {
     flex-direction: column;
@@ -110,6 +119,9 @@
       font-size: 0.8rem;
     }
     .repo_cards {
+      @media only screen and (max-width: 600px) {
+        flex-direction: column;
+      }
       display: flex;
       flex-direction: row;
       margin: 0.5rem 0.5rem;

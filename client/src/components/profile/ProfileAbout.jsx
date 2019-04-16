@@ -11,12 +11,10 @@ class ProfileAbout extends Component {
     //convert array to csv  for skills
 
     const skills = profile.skills.map((skill, index) => (
-      <ul>
-        <li key={index}>
-          <i className="fa fa-check" />
-          {skill}
-        </li>
-      </ul>
+      <li key={index}>
+        <i className="fa fa-check" />
+        {skill}
+      </li>
     ));
 
     return (
@@ -33,7 +31,9 @@ class ProfileAbout extends Component {
         </div>
         <div className="bio-right">
           <h3 className="text-center text-info">Skill Set</h3>
-          <div className="view__profile-skills">{skills}</div>
+          <div className="view__profile-skills">
+            <ul>{skills}</ul>
+          </div>
         </div>
       </div>
     );

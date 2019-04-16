@@ -35,7 +35,7 @@ class Education extends Component {
     ));
 
     return (
-      <div className="dashboard__education">
+      <div className="subcontent__education">
         <h4 className="mb-4">Education</h4>
         <table className="table">
           <thead>

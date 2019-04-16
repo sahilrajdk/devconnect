@@ -34,7 +34,7 @@ class Experience extends Component {
     ));
 
     return (
-      <div className="dashboard__experience">
+      <div className="subcontent__experience">
         <h4>Industry Experience</h4>
         <table className="table">
           <thead>

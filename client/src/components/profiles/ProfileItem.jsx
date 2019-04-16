@@ -7,7 +7,7 @@ class Profileitem extends Component {
   render() {
     const { profile } = this.props;
     return (
-      <div class="profile__card">
+      <div className="profile__card">
         <div className="profile__card-avatar">
           <img src={profile.user.avatar} alt="" className="rounded-circle" />
         </div>

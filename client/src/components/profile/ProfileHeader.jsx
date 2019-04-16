@@ -17,7 +17,7 @@ class ProfileHeader extends Component {
             {isEmpty(profile.company) ? null : (
               <span>at {profile.company}</span>
             )}
-            {isEmpty(profile.location) ? null : <p>{profile.location}</p>}
+            {isEmpty(profile.location) ? null : <span>{profile.location}</span>}
           </p>
         </div>
         <div className="view__profile-social">

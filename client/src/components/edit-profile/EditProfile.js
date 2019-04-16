@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 //custom input components
@@ -187,6 +188,9 @@ class CreateProfile extends Component {
     return (
       <div className="create__profile">
         <div className="create__profile-header">
+          <Link to="/dashboard" className="custom-btn btn-small">
+            Go Back
+          </Link>
           <h3>Create Your Profile</h3>
           <p>Let's get some information to make your profile stand out</p>
           <small>* = required field</small>
