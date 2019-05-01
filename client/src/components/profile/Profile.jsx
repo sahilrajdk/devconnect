@@ -31,7 +31,7 @@ class Profile extends Component {
       profileContent = (
         <React.Fragment>
           <div>
-            <Link to="/profiles" className="button__backtoprofiles">
+            <Link to="/profiles" className="button__backtoprofiles custom-btn">
               Back to Profiles
             </Link>
           </div>

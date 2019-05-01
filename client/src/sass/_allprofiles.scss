@@ -18,10 +18,20 @@
 
   &__content {
     display: flex;
+    padding: 1rem 5rem;
     overflow-y: scroll;
     height: 90%;
     flex-direction: column;
     scroll-behavior: smooth;
+    @media only screen and (min-width: 1024px) {
+      padding: 1rem 12rem;
+    }
+    @media only screen and (max-width: 1200px) {
+      padding: 1rem 1rem;
+    }
+    @media only screen and (max-width: 600px) {
+      padding: 1rem 1rem;
+    }
   }
   &__content::-webkit-scrollbar-track {
     background: #f19595;
@@ -59,7 +69,7 @@
       flex: 0 0 15%;
     }
     background-color: #7c4d56;
-    flex: 0 0 8%;
+
     justify-items: center;
     align-items: center;
 
@@ -69,6 +79,8 @@
     }
   }
   &-bio {
+    padding: 0.4rem;
+
     @media only screen and (max-width: 600px) {
       flex: 0 0 45%;
     }
@@ -91,22 +103,29 @@
     }
   }
   &-skills {
-    flex: 0 0 40%;
+    padding: 0.4rem;
+    flex: 1;
     text-align: center;
     ul {
       list-style: none;
+      text-align: center;
       li {
+        @media only screen and (max-width: 768px) {
+          font-size: 0.6rem;
+          margin-left: 1rem;
+        }
         @media only screen and (max-width: 600px) {
-          font-size: 0.3rem;
-          margin: 0.1rem;
+          font-size: 0.6rem;
+          display: block;
+          text-align: left;
         }
         margin-left: 1rem;
         display: inline;
         text-transform: uppercase;
         font-size: 0.8rem;
         i {
-          @media only screen and (max-width: 600px) {
-            font-size: 0.4rem;
+          @media only screen and (max-width: 768px) {
+            font-size: 0.6rem;
             padding: 0;
           }
           font-size: 0.7rem;
